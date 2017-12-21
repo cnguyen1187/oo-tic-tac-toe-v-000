@@ -79,3 +79,4 @@ end
 def full?
   @board.none? { |board| board == "" || board == " " || board == nil }
 end
+end
