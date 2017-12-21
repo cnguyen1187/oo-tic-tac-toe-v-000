@@ -63,3 +63,19 @@ def turn
     turn
   end
 end
+
+def won?
+  WIN_COMBINATIONS.detect do |win_combination|
+    if win_combination.all? {|index| @board[index] == "X"}
+      return win_combination
+    elsif win_combination.all? { |index| @board[index] == "O"}
+      return win_combination
+    else
+      false
+    end
+  end
+end
+
+def full?
+  @board.none? { |board| board == "" || board == " " || board == nil }
+end
